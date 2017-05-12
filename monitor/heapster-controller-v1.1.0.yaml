@@ -31,7 +31,7 @@ spec:
               memory: 200Mi
           command:
             - /heapster
-            - --source=kubernetes.summary_api:'192.168.18.3:8080'
+            - --source=kubernetes.summary_api:'127.0.0.1:8080'
             - --sink=influxdb:http://monitoring-influxdb:8086
             - --metric_resolution=60s
         - image: gcr.io/google_containers/heapster:v1.1.0
@@ -45,7 +45,7 @@ spec:
               memory: 200Mi
           command:
             - /eventer
-            - --source=kubernetes:'192.168.18.3:8080'
+            - --source=kubernetes:'127.0.0.1:8080'
             - --sink=influxdb:http://monitoring-influxdb:8086
         - image: gcr.io/google_containers/addon-resizer:1.3
           name: heapster-nanny
@@ -72,8 +72,8 @@ spec:
             - --memory=200Mi
             - --extra-memory=4Mi
             - --threshold=5
-            - --Deployment=heapster-v1.1.0
-            - --containers=heapster
+            - --deployment=heapster-v1.1.0
+            - --container=heapster
             - --poll-period=300000
             - --estimator=exponential
         - image: gcr.io/google_containers/addon-resizer:1.3
