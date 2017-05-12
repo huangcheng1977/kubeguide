@@ -10,8 +10,9 @@ metadata:
 spec:
   replicas: 1
   selector:
-    k8s-app: heapster
-    version: v1.1.0
+    matchLabels:
+      k8s-app: heapster
+      version: v1.1.0
   template:
     metadata:
       labels:
@@ -22,7 +23,7 @@ spec:
         - image: gcr.io/google_containers/heapster:v1.1.0
           name: heapster
           resources:
-            limites:
+            limits:
               cpu: 100m
               memory: 200Mi
             requests:
@@ -36,7 +37,7 @@ spec:
         - image: gcr.io/google_containers/heapster:v1.1.0
           name: eventer
           resources:
-            limites:
+            limits:
               cpu: 100m
               memory: 200Mi
             requests:
@@ -47,9 +48,9 @@ spec:
             - --source=kubernetes:'192.168.18.3:8080'
             - --sink=influxdb:http://monitoring-influxdb:8086
         - image: gcr.io/google_containers/addon-resizer:1.3
-        name: heapster-nanny
+          name: heapster-nanny
           resources:
-            limites:
+            limits:
               cpu: 50m
               memory: 100Mi
             requests:
@@ -76,9 +77,9 @@ spec:
             - --poll-period=300000
             - --estimator=exponential
         - image: gcr.io/google_containers/addon-resizer:1.3
-        name: eventer-nanny
+          name: eventer-nanny
           resources:
-            limites:
+            limits:
               cpu: 50m
               memory: 100Mi
             requests:
