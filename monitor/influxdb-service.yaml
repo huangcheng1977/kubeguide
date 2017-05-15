@@ -10,10 +10,10 @@ spec:
     - name: http
       port: 8083
       targetPort: 8083
-      nodePort: 30083
+      nodePort: 8083
     - name: api
       port: 8086
       targetPort: 8086
-      nodePort: 30086
+      nodePort: 8086
   selector:
     name: influxGrafana
