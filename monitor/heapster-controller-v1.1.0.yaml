@@ -102,6 +102,6 @@ spec:
             - --extra-memory=500Ki
             - --threshold=5
             - --deployment=heapster-v1.1.0
-            - --containers=eventer
+            - --container=eventer
             - --poll-period=300000
             - --estimator=exponential
