@@ -15,9 +15,11 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker.io/kubeguide/guestbook-php-frontend
+        image: registry.kingdee.com/guestbook-php-frontend
         env:
         - name: GET_HOSTS_FROM
           value: env
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: regsecret

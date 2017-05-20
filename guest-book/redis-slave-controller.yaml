@@ -15,9 +15,11 @@ spec:
     spec:
       containers:
       - name: slave
-        image: docker.io/kubeguide/guestbook-redis-slave
+        image: registry.kingdee.com/guestbook-redis-slave
         env:
         - name: GET_HOSTS_FROM
           value: env
         ports:
         - containerPort: 6379
+      imagePullSecrets:
+      - name: regsecret
