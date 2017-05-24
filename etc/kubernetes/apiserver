@@ -22,8 +22,6 @@ KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
 
 # default admission control policies
 KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"
-#KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ResourceQuota"
 
 # Add your own!
-#KUBE_API_ARGS="--insecure-port=0 --secure-port=443 --client-ca-file=/var/run/kubernetes/ca.crt --tls-private-key-file=/var/run/kubernetes/server.key --tls-cert-file=/var/run/kubernetes/server.crt"
-KUBE_API_ARGS="--secure-port=443 --service-node-port-range=1024-32767 --client-ca-file=/var/run/kubernetes/ca.crt --tls-private-key-file=/var/run/kubernetes/server.key --tls-cert-file=/var/run/kubernetes/server.crt"
+KUBE_API_ARGS="--secure-port=443 --service-node-port-range=1024-32767 --client-ca-file=/etc/kubernets/ca.crt --tls-private-key-file=/etc/kubernets/server.key --tls-cert-file=/etc/kubernets/server.crt"
