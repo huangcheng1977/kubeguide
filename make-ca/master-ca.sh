@@ -13,8 +13,3 @@ openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 
 openssl genrsa -out cs_client.key 2048
 openssl req -new -key cs_client.key -subj "/CN=k8s-kcm" -out cs_client.csr
 openssl x509 -req -in cs_client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 5000 -out cs_client.crt
-
-# kubelet
-openssl genrsa -out kubelet_client.key 2048
-openssl req -new -key kubelet_client.key -subj "/CN=k8s-node" -out kubelet_client.csr
-openssl x509 -req -in kubelet_client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 5000 -out kubelet_client.crt
