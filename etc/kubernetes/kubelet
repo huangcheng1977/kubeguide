@@ -11,7 +11,7 @@ KUBELET_ADDRESS="--address=192.168.206.121"
 KUBELET_HOSTNAME="--hostname-override=192.168.206.121"
 
 # location of the api-server
-KUBELET_API_SERVER="--api-servers=http://192.168.206.121:443"
+KUBELET_API_SERVER="--api-servers=https://192.168.206.121:443"
 
 # pod infrastructure container
 KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"
