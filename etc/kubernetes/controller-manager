@@ -4,4 +4,4 @@
 # defaults from config and apiserver should be adequate
 
 # Add your own!
-KUBE_CONTROLLER_MANAGER_ARGS="--master=https://192.168.206.149:443 --service-account-private-key-file=/var/run/kubernetes/server.key --root-ca-file=/var/run/kubernetes/ca.crt --kubeconfig=/etc/kubernetes/kubeconfig"
+KUBE_CONTROLLER_MANAGER_ARGS="--master=https://192.168.206.121:443 --service-account-private-key-file=/var/run/kubernetes/server.key --root-ca-file=/var/run/kubernetes/ca.crt --kubeconfig=/etc/kubernetes/kubeconfig"
