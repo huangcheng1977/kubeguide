@@ -24,4 +24,4 @@ KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
 KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"
 
 # Add your own!
-KUBE_API_ARGS="--secure-port=443 --service-node-port-range=1024-32767 --client-ca-file=/etc/kubernets/ca.crt --tls-private-key-file=/etc/kubernets/server.key --tls-cert-file=/etc/kubernets/server.crt"
+KUBE_API_ARGS="--secure-port=443 --service-node-port-range=1024-32767 --client-ca-file=/etc/kubernetes/ca.crt --tls-private-key-file=/etc/kubernetes/server.key --tls-cert-file=/etc/kubernetes/server.crt"
