@@ -148,7 +148,7 @@ spec:
           requests:
             memory: 10Mi
       - name: healthz
-        image: gcr.io/google_containers/exechealthz-amd64:1.2
+        image: registry.kingdee.com/exechealthz-amd64:1.2
         resources:
           limits:
             memory: 50Mi
@@ -170,3 +170,5 @@ spec:
         - containerPort: 8080
           protocol: TCP
       dnsPolicy: Default  # Don't use cluster DNS.
+      imagePullSecrets:
+      - name: regsecret
