@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: kubernetes-dashboard
-        image: gcr.io/google_containers/kubernetes-dashboard-amd64:v1.5.0
+        image: registry.kingdee.com/kubernetes-dashboard-amd64:v1.5.0
         resources:
           # keep request = limit to keep this container in guaranteed class
           limits:
@@ -38,3 +38,5 @@ spec:
             port: 9090
           initialDelaySeconds: 30
           timeoutSeconds: 30
+      imagePullSecrets:
+      - name: regsecret
