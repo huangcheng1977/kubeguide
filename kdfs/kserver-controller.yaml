@@ -19,8 +19,8 @@ spec:
         scheduler.alpha.kubernetes.io/tolerations: '[{"key":"CriticalAddonsOnly", "operator":"Exists"}]'
     spec:
       containers:
-        - name: kdfs-kserver
-        image: registry.kingdee.com/kubernetes-dashboard-amd64:v1.5.0
+      - name: kdfs-kserver
+        image: registry.kingdee.com/kserver-test:1.0.2
         resources:
           limits:
             cpu: 1000m
@@ -31,8 +31,7 @@ spec:
         ports:
         - containerPort: 9271
         livenessProbe:
-          httpGet:
-            path: /
+          tcpSocket:
             port: 9271
           initialDelaySeconds: 30
           timeoutSeconds: 30
