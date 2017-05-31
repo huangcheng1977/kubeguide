@@ -8,4 +8,4 @@ spec:
       targetPort: 8080
   selector:
     component: zeppelin
-  type: LoadBalancer
+  #type: LoadBalancer
