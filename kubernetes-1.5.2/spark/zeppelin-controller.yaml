@@ -19,3 +19,5 @@ spec:
           resources:
             requests:
               cpu: 100m
+      imagePullSecrets:
+      - name: regsecret

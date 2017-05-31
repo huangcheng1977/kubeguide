@@ -27,3 +27,5 @@ spec:
                 port: 80
               initialDelaySeconds: 120
               timeoutSeconds: 5
+      imagePullSecrets:
+      - name: regsecret
