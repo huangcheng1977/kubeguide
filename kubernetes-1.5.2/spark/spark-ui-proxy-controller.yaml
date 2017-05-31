@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: spark-ui-proxy
-          image: elsonrodriguez/spark-ui-proxy:1.0
+          image: registry.kingdee.com/spark-ui-proxy:1.0
           ports:
             - containerPort: 80
           resources:
