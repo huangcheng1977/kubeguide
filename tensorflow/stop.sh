@@ -1,2 +1,2 @@
-kubectl detele -f tf-service.yaml
-kubectl detele -f tf-controller.yaml
+kubectl delete -f tf-service.yaml
+kubectl delete -f tf-controller.yaml
