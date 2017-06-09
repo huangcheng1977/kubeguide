@@ -1,20 +1,20 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: fluentd
+  name: efk
   namespace: kube-system
 
 ---
 
 kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1alpha1
+apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
-  name: fluentd
+  name: efk
 subjects:
   - kind: ServiceAccount
-    name: fluentd
+    name: efk
     namespace: kube-system
 roleRef:
   kind: ClusterRole
-  name: view
+  name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
