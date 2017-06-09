@@ -9,12 +9,14 @@ Documentation=https://github.com/coreos
 Type=notify
 WorkingDirectory=/var/lib/etcd/
 EnvironmentFile=-/etc/etcd/etcd.conf
+Environment=ETCD_NAME=k8s-1
+Environment=INTERNAL_IP=192.168.206.121
 ExecStart=/usr/bin/etcd \
   --name=${ETCD_NAME} \
-  --cert-file=/etc/etcd/ssl/etcd.pem \
-  --key-file=/etc/etcd/ssl/etcd-key.pem \
-  --peer-cert-file=/etc/etcd/ssl/etcd.pem \
-  --peer-key-file=/etc/etcd/ssl/etcd-key.pem \
+  --cert-file=/etc/kubernetes/ssl/kubernetes.pem \
+  --key-file=/etc/kubernetes/ssl/kubernetes-key.pem \
+  --peer-cert-file=/etc/kubernetes/ssl/kubernetes.pem \
+  --peer-key-file=/etc/kubernetes/ssl/kubernetes-key.pem \
   --trusted-ca-file=/etc/kubernetes/ssl/ca.pem \
   --peer-trusted-ca-file=/etc/kubernetes/ssl/ca.pem \
   --initial-advertise-peer-urls=https://${INTERNAL_IP}:2380 \
@@ -22,7 +24,7 @@ ExecStart=/usr/bin/etcd \
   --listen-client-urls=https://${INTERNAL_IP}:2379,http://127.0.0.1:2379 \
   --advertise-client-urls=https://${INTERNAL_IP}:2379 \
   --initial-cluster-token=etcd-cluster-0 \
-  --initial-cluster k8s-1=https://k8s-1:2380,k8s-2=https://k8s-2:2380,k8s-3=https://k8s-3:2380
+  --initial-cluster k8s-1=https://k8s-1:2380,k8s-2=https://k8s-2:2380,k8s-3=https://k8s-3:2380 \
   --initial-cluster-state=new \
   --data-dir=/var/lib/etcd
 Restart=on-failure
