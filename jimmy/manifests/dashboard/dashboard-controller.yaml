@@ -21,7 +21,7 @@ spec:
       serviceAccountName: dashboard
       containers:
       - name: kubernetes-dashboard
-        image: sz-pg-oam-docker-hub-001.tendcloud.com/library/kubernetes-dashboard-amd64:v1.6.0
+        image: registry.kingdee.com/kubernetes-dashboard-amd64:v1.6.1
         resources:
           limits:
             cpu: 100m
@@ -40,3 +40,5 @@ spec:
       tolerations:
       - key: "CriticalAddonsOnly"
         operator: "Exists"
+      imagePullSecrets:
+      - name: regsecret
